@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOK Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="Os.css">
+    <style>
+        body {
+            background-color: rgb(192, 230, 240);
+            background-position: center;
+            color: black;
+        }
+
+        .navbar {
+            background-color: rgb(192, 230, 240);
+            border-radius: 0px;
+
+        }
+
+        .navbar ul {
+            font-size: 24px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 32px;
+            margin-bottom: 10px
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+
+        .define {
+            color: rgb(8, 111, 129);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        h2 {
+            color: rgb(77, 7, 7);
+            text-align: center;
+        }
+
+        .adv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .disadv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .eg h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+
+        p {
+            font-size: 22px;
+        }
+
+        li {
+            font-size: 22px;
+        }
+
+        .btn {
+            transition: all .5s ease;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: black;
+            font-size: 30px;
+            padding: 13px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            color: #001f3f;
+            background-color: #fff;
+            border: none;
+        }
+
+        .btn:hover a {
+            color: black;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="navigation">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+
+            <div class="navbar" id="navBar">
+
+                <ul>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#">Home</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">Algorithms</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/LOOK%20Simulator.html">Simulation</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about">About Us</a></li>
+                </ul>
+
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#"> HOME
+                    </a></li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">ALGORITHMS</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/LOOK%20Simulator.html">SIMULATION</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about"> ABOUT US </a>
+                </li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </div>
+
+
+    </header>
+    <div class="define">
+        <h2> LOOK Disk Scheduling Algorithm </h2>
+        <p>
+            Look disk scheduling is another type of disk scheduling algorithm. Look scheduling is an enhanced version of
+            SCAN disk
+            scheduling. Look disk scheduling is the same as SCAN disk scheduling, but in this scheduling, instead of
+            going
+            till the
+            last track, we go till the last request and then change the direction.
+        </p>
+
+    </div>
+
+    <div class="adv">
+        <h3>Advantages of LOOK Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> In Look disk scheduling, there is no starvation. </li>
+            <li> Look disk scheduling offers low variance in waiting time and response time.</li>
+            <li> Look disk scheduling offers better performance as compared to the SCAN disk scheduling.</li>
+            <li> In look disk scheduling, there is no requirement of disk head to move till the end to the disk when we
+                do
+                not have any
+                request to be serviced. </li>
+        </ol>
+        </p>
+
+    </div>
+
+    <div class="disadv">
+        <h3>Disadvantages of LOOK Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> In look disk scheduling, there is more overhead to find the end request. </li>
+            <li> Look disk scheduling is not used in case of more load. </li>
+        </ol>
+        </p>
+
+    </div>
+
+    <div class="eg">
+        <h3>
+            Example
+        </h3>
+
+        <p>
+            Consider the following disk request sequence for a disk with 100 tracks
+
+            98, 137, 122, 183, 14, 133, 65, 78
+
+            Head pointer starting at 54 and moving in left direction. Find the number of head movements in cylinders
+            using
+            LOOK scheduling.
+
+            Number of cylinders crossed = 11 + 13 + 20 + 24 + 11 + 4 + 46 + 169 = 298
+        </p>
+
+    </div>
+
+
+    <img src="data:image/png;base64,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"
+        width="500">
+    <button class="btn"> <a href="https://bhargav-nadiadra.github.io/osproject.github.io/LOOK%20Simulator.html">Click for Simulation
+        </a> </button>
+</body>
+<script src="try.js"></script>
+
+</html>

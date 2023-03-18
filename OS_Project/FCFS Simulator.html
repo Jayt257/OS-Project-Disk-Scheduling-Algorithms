@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <link rel="stylesheet" href="SIMULATOR.css" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <body>
+    <h1 style="color: rgb(0, 47, 90)">FCFS Disk Scheduling Algorithm</h1>
+
+    <h3>Input Array Elements</h3>
+    <div class="input-container">
+      <label>Enter the queue : </label>
+      <input id="array" placeholder='Eg: "82 ,170 ,43 ,140 ,24 ,16 ,190"' oninput="validation(event)"/><br/>
+        <h6>0-199, no special character allowed except , </h6>
+    </div>
+
+    <div class="input-container">
+      <label class="head">Enter head : </label>
+      <input id="inputhead"oninput="validation(event)" /><br />
+          <h6>0-199, no special character allowed except , </h6>
+    </div>
+
+    <div class="btn">
+      <button type="button" name="button" onclick="FCFS(),CHART()">
+        Calculate
+      </button>
+    </div>
+
+    <p id="vv"></p>
+
+    <br />
+    <div class="graph">
+      <div id="myPlot" style="width: 100%; max-width: 700px"></div>
+    </div>
+
+    <script>
+      function gg() {
+        FCFS();
+        CHART();
+      }
+
+      function validation(event) {
+        let value = event.target.value;
+        if (!/^(\d+,?(,\d+,?)*)?$/.test(value)) {
+          alert("invalid input entered. Please enter integer postive numbers sepearted by comma(,) ");
+        }
+      }
+
+      function FCFS() {
+        var seek_count = 0;
+        var distance, cur_track;
+        var x_values = document
+          .getElementById("array")
+          .value.split(",")
+          .map(Number);
+        var head = document.getElementById("inputhead").value;
+        let size = x_values.length;
+
+        for (var i = 0; i < size; i++) {
+          cur_track = x_values[i];
+
+          distance = Math.abs(cur_track - head);
+
+          seek_count += distance;
+
+          head = cur_track;
+        }
+
+        document.getElementById("vv").innerHTML =
+          "Total number of " + "seek operations = " + seek_count;
+      }
+
+      function CHART() {
+        var arr = document.getElementById("array").value.split(",").map(Number);
+        var head = document.getElementById("inputhead").value;
+        var xArray = [head];
+        var yArray = arr.map((elem, i) => -i);
+        yArray.push(-arr.length);
+        for (var i = 0; i < arr.length; i++) {
+          xArray.push(arr[i]);
+        }
+
+        var data = [
+          {
+            x: xArray,
+            y: yArray,
+            mode: "line",
+          },
+        ];
+
+        var layout = {
+          yaxis: { range: [-10, 0] },
+          xaxis: { range: [0, 200] },
+
+          title: "FCFS GRAPH",
+        };
+
+        Plotly.newPlot("myPlot", data, layout);
+      }
+    </script>
+  </body>
+</html>

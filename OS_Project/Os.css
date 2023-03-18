@@ -1,0 +1,198 @@
+/* #content{
+    font-family: 'Akaya Telivigala', cursive;
+} */
+
+.define{
+    padding-top: 0px;
+    color: rgb(77, 7, 7);
+}
+
+.reasons{
+    color: rgb(0, 6, 90);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.reasons ol li {
+color: black;
+font-size: 25px;
+}
+
+.objective{
+    color: rgb(0, 6, 90);
+      margin-left: 10px;
+    font-size: 20px;
+}
+
+.objective ol li {
+    /* font-weight: bold; */
+    color: black;
+    font-size: 25px;
+}
+
+.purpose{
+    color: rgb(0, 6, 90);
+      margin-left: 10px;
+    font-size: 20px;
+}
+
+.purpose h3 {
+    font-weight: normal;
+    color: black;
+    font-size: 25px;
+}
+
+.algorithms{
+    color: rgb(0, 6, 90);
+      margin-left: 10px;
+    font-size: 20px;
+}
+
+.algorithms h3{
+    font-weight: normal;
+    color: black;
+    font-size: 25px;
+}
+
+.algorithms ol li {
+    color: white;
+    font-size: 25px;
+}
+
+h1{
+    color: rgb(15, 104, 96);
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+p{
+    font-size: 28px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+ol li{
+    font-size: 20px;
+}
+
+img src {
+    height: 100px;
+}
+
+.btn{
+    /* font-family: 'Akaya Telivigala', cursive; */
+     transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    font-size: 30px;
+    padding: 13px;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    color: #001f3f;
+    background-color: #fff;
+    border: none;
+}
+
+.btn:hover a {
+    color: black;
+}
+.btn a {
+  
+    text-decoration: none;
+    color: black;
+}
+
+#menu{
+    position: absolute;
+    height: 30px;
+    width: 35px;
+    margin: 15px 0 20px 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.bar{
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    display: block;
+    border-radius: 5px;
+    z-index: 100;
+    transition: 0.3s ease;
+}
+
+#bar1{
+    transform: translateY(-4px);
+}
+
+#bar3{
+    transform: translateY(4px);
+}
+
+.nav li a{
+    color: black;
+    text-decoration: none;
+}
+
+.nav li a:hover{
+    font-weight: bold;
+}
+
+.nav li{
+    list-style: none;
+    padding: 12px 0;
+}
+
+.nav{
+    padding: 0;
+    margin: 0 20px;
+    transition: 1s ease;
+    display: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+.icon .bar{
+    background-color: black;
+}
+
+.icon #bar1{
+    transform: translateY(4px) rotate(-45deg);
+}
+
+
+.icon #bar3{
+    transform: translateY(-6px) rotate(45deg);
+}
+
+.icon #bar2{
+    opacity: 0;
+}
+
+.change{
+       /* font-family: 'Akaya Telivigala', cursive; */
+    background-color: whitesmoke;
+    height: 155vh;
+    margin: 0;
+    padding-top: 70px;
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    /* z-index: 10; */
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:left;
+}

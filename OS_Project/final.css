@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth ;
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 3.5rem;
+    background: #222;
+    z-index: 100;
+}
+
+.nav h2 {
+    color: white;
+    font-size: 1.7rem;
+}
+
+#item {
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#item li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+#item li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+#item li a:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.back{
+    background-image: url(background.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
+}
+
+.back .overlay {
+    background: #171819;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+}
+
+.mid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.mid p{
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+}
+
+.mid h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.mid .btn {
+margin-top: 2rem;
+}
+
+.mid .btn a {
+    text-decoration: none;
+    text-transform: uppercase
+}
+
+.mid .btn a.border {
+    color: white;
+    border: 1px solid white;
+    font-weight: 500;
+    padding: 0.9rem 1.6rem;
+}
+
+.mid .btn a.border{
+    color: white;
+    background: transparent;
+}
+
+.mid .btn a.border:hover{
+    color: black;
+    background: white;
+    border: 1px solid white;
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    background-color: rgb(161, 220, 235);
+}
+
+.details .one {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.details .one h3 {
+    font-size: 2.5rem;
+    padding-bottom: 1.1rem;
+}
+
+.details .one h6 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-bottom: 1.1rem;
+}
+
+.details .one p {
+    font-size: 1.3rem;
+    padding-bottom: 1.1rem;
+}
+
+.details .one a {
+    color: white;
+    background: #222;
+    padding: 1rem 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.details .one a:hover{
+    background: orange;
+    color: black;
+}
+
+.details .two {
+    width: 45%;
+    border-left: 1px solid black;
+    padding-left: 4rem;
+}
+
+.details .two h3 {
+    font-size: 2.5rem;
+    padding-bottom: 1.1rem;
+}
+
+.details .two h5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.trainer{
+    background: rgb(192, 230, 240);
+    padding-top: 21rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 13rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trainer .about{
+    width: 39%;
+}
+
+.trainer .about h2{
+    color: black;
+    font-size: 2.3rem;
+    padding-bottom: 1.3rem;
+}
+.trainer .about p{
+    color: black;
+    font-size: 1.4rem;
+}
+.trainer .people{
+  width: 55%; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.trainer .people .team1{
+    width: 45%;
+    height: auto;
+    box-sizing: border-box;
+    background: white;
+    margin: 15px;
+    border: 1px solid black;
+}
+
+.trainer .people .team1:hover{
+    transform: scale(1.2);
+}
+
+.trainer .people .team1 .name {
+    text-align: center;
+    padding: 5px 20px 0 20px;
+
+}
+
+.trainer .people .team1 .teamdetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0px;
+}
+
+.trainer.people .team1 .name .h4 {
+    font-size: 1.5rem;
+}
+
+.trainer .people .team1 .img img {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+}
+
+.trainer .people .team1 .img a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+     font-size: 2.0 rem;
+}
+
+.trainer .people .team1 .img a:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+     font-size: 2.0 rem;
+}
+
+.class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 8rem;
+    background-color: rgb(157, 236, 232);
+}
+
+.class .paragraph{
+    font-size: 1.3rem;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.class .h2{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    text-align: center;
+}
+ 
+.class .classmenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.class .classmenu .team1{
+    width: 45%;
+    height: auto;
+    box-sizing: border-box;
+    /* background: white; */
+    margin: 20px;
+    /* border: 1px solid black; */
+}
+
+.class .classmenu .team1 .name {
+    padding: 5px 20px 0 20px;
+
+}
+
+.class .classmenu .team1 .teamdetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.class .classmenu .team1 .name .h4 {
+    font-size: 1.5rem;
+}
+
+.class .classmenu .team1 .img img {
+     width: 50%;
+    display: block;
+    object-fit: cover;
+    height: 150px;
+    border-radius: 75px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.contact{
+    padding: 8rem;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact .form{
+    width: 45%;
+}
+
+.contact .form h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.contact .form .submit{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.contact .form .submit input, .contact .form .submit textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.contact .form .submit input:focus, .contact .form .submit textarea:focus {
+    border: 3px solid black;
+}
+
+.contact .form .submit a{
+    width: 100%;
+    padding: 15px 0;
+    color: white;
+    text-decoration: none;
+    background: black;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.contact .form .submit a:hover{
+    background-color: blue; 
+    color: white;
+}
+
+.footer {  
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon i {
+    font-size: large;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+.icon i:hover{
+    color: orange;;
+    cursor: pointer;
+}
+
+.chatbot{
+    display: flex;
+    align-items: center;
+    justify-content:end;
+}
+
+.chatbot a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+}
+
+.chatbot a:hover{
+   background-color: orange;
+   color: black;
+}

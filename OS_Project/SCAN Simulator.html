@@ -1,0 +1,199 @@
+<!-- OS PROJECT -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="SIMULATOR.css">
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<!-- Title of Algorithm -->
+    <h1 style=" color: rgb(0, 47, 90);">
+        SCAN Disk Scheduling Algorithm
+    </h1>
+
+<!-- Input field of queue elemets -->
+    <h3>Input Array Elements</h3>
+    <div class="input-container">
+        <label>Enter the queue : </label>
+        <input id="array" placeholder='Eg: "82,170,43,140,24,16,190"' oninput="validation(event)" /></br>
+        <h6>0-199, no special character allowed except , </h6>
+    </div>
+
+<!-- Input field of head position -->
+    <div class="input-container">
+        <label class="head">Enter head : </label> <input id="inputhead" oninput="validation(event)"/></br>
+        <h6>0-199, no special character allowed except , </h6>
+    </div>
+<!-- Radio button for taking input of right/left  -->
+    <div class="radio">
+        <input type="radio" id="rd1" name="option" value="Left">Left
+        <input type="radio" id="rd2" name="option" value="Right" ;>Right
+    </div>
+    </div>
+<!-- button for calculate -->
+    <div class="btn">
+        <button type="button" name="button" onclick="SCAN(),CHART()" ;>
+            Calculate
+        </button>
+    </div>
+    <p id="vv"></p>
+    <br>
+    <!-- section for graph -->
+    <div class="graph">
+        <div id="myPlot" style="width:100%;max-width:700px">
+        </div>
+    </div>
+    <div id="result"></div>
+
+<!-- Java script starts -->
+    <script>
+
+        function gg() {
+            SCAN();
+            CHART();
+        }
+// BELOW FUNCTION CHECKS THE WHETHER THE STRING INPUT CONTAINS ONLY NUMBER 
+//  AND COMMA(,) OR NOT. IF NOT ALTERT THE USER
+        function validation(event) {
+        let value = event.target.value;
+        if (!/^(\d+,?(,\d+,?)*)?$/.test(value)) {
+          alert("invalid input entered. Please enter integer postive numbers sepearted by comma(,) ");
+        }
+      }
+// This is for max disc size i.e. max you can enter value upto 200
+        let disk_size = 200;
+
+// FUNCTION SCAN HELP US TO GET THE SORTED INPUT ARRAY ACCORDING TO THE SCAN ALGORITHM
+// This is scan fuction 
+// having time complexity of O(n*logn)
+        function SCAN() {
+            // this will take input from radio button
+            var type1 = document.getElementById("rd1")   
+            var type2 = document.getElementById("rd2")
+
+
+            // this will take input of queue and split elements with , and pass in array
+            let arr = document.getElementById("array").value.split(",").map(Number)
+
+             // this will take input of currunt position of head
+            let head = Number(document.getElementById("inputhead").value)
+            let direction
+
+// if first radio button is checked direction will be left
+            if (type1.checked) {
+                direction = "left"
+            }
+  // if second radio button is checked direction will be right
+            if (type2.checked) {
+                direction = "right"
+            }
+
+            let seek_count = 0;
+            let distance, cur_track;
+            let left = [], right = [];
+            let seek_sequence = [];
+
+            // appending end values
+            // which has to be visited
+            // before reversing the direction
+            if (direction == "left")
+                left.push(0);
+            else if (direction == "right")
+                right.push(disk_size - 1);
+
+            // forloop having time complexity of n
+            for (let i = 0; i < arr.length + 1; i++) {
+                if (arr[i] < head)
+                    left.push(arr[i]);
+                if (arr[i] > head)
+                    right.push(arr[i]);
+            }
+
+          // sorting left and right vectors by merge sort
+            left.sort(function (a, b) { return a - b });
+            right.sort(function (a, b) { return a - b });
+
+            // run the while loop two times.
+            // one by one scanning right
+            // and left of the head
+            let run = 2;
+            while (run-- > 0) {
+                if (direction == "left") {
+                    for (let i = left.length - 1; i >= 0; i--) {
+                        cur_track = left[i];
+
+                        // appending current track to seek sequence
+                        seek_sequence.push(cur_track);
+
+                        // calculate absolute distance
+                        distance = Math.abs(cur_track - head);
+
+                        // increase the total count
+                        seek_count += distance;
+
+                        // accessed track is now the new head
+                        head = cur_track;
+                    }
+                    direction = "right";
+                }
+                else if (direction == "right") {
+                    for (let i = 0; i < right.length; i++) {
+                        cur_track = right[i];
+
+                        // appending current track to seek sequence
+                        seek_sequence.push(cur_track);
+
+                        // calculate absolute distance
+                        distance = Math.abs(cur_track - head);
+
+                        // increase the total count
+                        seek_count += distance;
+
+                        // accessed track is now new head
+                        head = cur_track;
+                    }
+                    direction = "left";
+                }
+            }
+            document.getElementById("vv").innerHTML = "Total number of " +
+                "seek operations = " +
+                seek_count;
+
+            CHART(seek_sequence)
+        }
+        // request array
+        // fuction to make chart
+        // that is having one forloop so time complexity will O(n).
+        function CHART(arr) {
+            // takeing array output in console
+            console.log(arr)
+
+            // getting value of input head
+            var head = document.getElementById('inputhead').value;
+            var xArray = [head];
+            var yArray = arr.map((elem, i)=>-i);
+            yArray.push(-arr.length)
+            
+            for (var i = 0; i < arr.length + 1; i++) {
+                xArray.push(arr[i]);    // pusing array elemts inro xArray
+            }
+
+            var data = [{
+                x: xArray,
+                y: yArray,
+                mode: "line"
+            }];
+            
+            // scales for x and y axis
+            var layout = {
+                yaxis: { range: [-10, 0], },
+                xaxis: { range: [0, 200], },
+                title: "SCAN GRAPH"
+            };
+
+            // fuctoion to ploat graph
+            Plotly.newPlot("myPlot", data, layout);
+        }
+    </script>
+</body>
+</html>
+<!-- TIME COMPLEXITY OF THE CODE IS O(nlogn) -->

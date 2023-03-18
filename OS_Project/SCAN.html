@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAN Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="Os.css">
+    <style>
+        body {
+            background-color: rgb(192, 230, 240);
+            background-position: center;
+            color: black;
+        }
+
+        .navbar {
+            background-color: rgb(192, 230, 240);
+            border-radius: 0px;
+        }
+
+        .navbar ul {
+            font-size: 24px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 32px;
+            margin-bottom: 10px
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+
+        .define {
+            color: rgb(8, 111, 129);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        h2 {
+            color: rgb(77, 7, 7);
+            text-align: center;
+        }
+
+        .adv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .disadv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .eg h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+
+        p {
+            font-size: 22px;
+        }
+
+        li {
+            font-size: 22px;
+        }
+
+        .btn {
+            transition: all .5s ease;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: black;
+            font-size: 30px;
+            padding: 13px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            color: #001f3f;
+            background-color: #fff;
+            border: none;
+        }
+
+        .btn:hover a {
+            color: black;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="navigation">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+
+            <div class="navbar" id="navBar">
+
+                <ul>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#">Home</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">Algorithms</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/SCAN%20Simulator.html">Simulation</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about">About Us</a></li>
+                </ul>
+
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#"> HOME
+                    </a></li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">ALGORITHMS</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/SCAN%20Simulator.html">SIMULATION</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about"> ABOUT US </a>
+                </li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </div>
+
+
+    </header>
+    <div class="define">
+        <h2> SCAN Disk Scheduling Algorithm </h2>
+        <p>
+            The SCAN disk scheduling algorithm is another type of disk scheduling algorithm.
+            In this algorithm, we move the disk arm into a specific direction (direction can be moved towards large
+            value or
+            the smallest value).
+            Each request is addressed that comes in its path, and when it comes into the end of the disk, then the disk
+            arm
+            will move reverse, and all the requests are addressed that are arriving in its path.
+            Scan disk scheduling algorithm is also called an elevator algorithm because its working is like an elevator.
+        </p>
+    </div>
+
+    <div class="adv">
+        <h3>Advantages of SCAN Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li>In SCAN disk scheduling, there is a low variance of response time.</li>
+            <li>In this algorithm, throughput is high.</li>
+            <li>Response time is average.</li>
+            <li> In SCAN disk scheduling, there is no starvation.</li>
+        </ol>
+        </p>
+    </div>
+
+    <div class="disadv">
+        <h3>Disadvantages of SCAN Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li>SCAN disk scheduling algorithm takes long waiting time for the cylinders, just visited by the head.
+            </li>
+            <li>In SCAN disk scheduling, we have to move the disk head to the end of the disk even when we don’t have
+                any
+                request to service.</li>
+        </ol>
+        </p>
+    </div>
+
+    <div class="eg">
+        <h3>Example</h3>
+        <p>
+            Consider the following disk request sequence for a disk with 100 tracks
+
+            98, 137, 122, 183, 14, 133, 65, 78
+
+            Head pointer starting at 54 and moving in left direction. Find the number of head movements in cylinders
+            using
+            SCAN scheduling.
+        </p>
+    </div>
+
+
+    <img src="data:image/png;base64,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"
+        width="500">
+
+    <p>Number of Cylinders = 40 + 14 + 65 + 13 + 20 + 24 + 11 + 4 + 46 = 237</p>
+
+    <button class="btn"> <a href="https://bhargav-nadiadra.github.io/osproject.github.io/SCAN%20Simulator.html">Click for Simulation
+        </a> </button>
+
+</body>
+<script src="try.js"></script>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCFS Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="Os.css">
+    <style>
+        body {
+            background-color: rgb(192, 230, 240);
+            background-position: center;
+            color: black;
+         
+        }
+
+        .navbar {
+            background-color: rgb(192, 230, 240);
+            border-radius: 0px;
+
+        }
+
+        .navbar ul {
+            font-size: 24px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 32px;
+            margin-bottom: 10px
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+
+        .define {
+            color: rgb(8, 111, 129);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        h2 {
+            color: rgb(77, 7, 7);
+            text-align: center;
+        }
+
+        .adv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .disadv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .eg h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+
+        p {
+            font-size: 22px;
+        }
+
+        li {
+            font-size: 22px;
+        }
+
+        .btn {
+            transition: all .5s ease;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: black;
+            font-size: 30px;
+            padding: 13px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            color: #001f3f;
+            background-color: #fff;
+            border: none;
+        }
+
+        .btn:hover a {
+            color: black;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="navigation">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+
+            <div class="navbar" id="navBar">
+
+                <ul>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#">Home</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">Algorithms</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/FCFS%20Simulator.html">Simulation</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about">About Us</a></li>
+                </ul>
+
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#"> HOME
+                    </a></li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">ALGORITHMS</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/FCFS%20Simulator.html">SIMULATION</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about"> ABOUT US </a>
+                </li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </div>
+
+
+    </header>
+    <div class="define">
+        <h2>FCFS(First-Come-First-Serve) Disk Scheduling Algorithm</h2>
+        <p>
+            FCFS (First-Come-First-Serve) is the easiest disk scheduling algorithm among all the scheduling algorithms.
+            In the FCFS disk scheduling algorithm, each input/output request is served in the order in which the
+            requests
+            arrive.
+            In this algorithm, starvation does not occur because FCFS address each request.
+        </p>
+    </div>
+
+    <div class="adv">
+        <h3>Advantages of FCFS Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> In FCFS disk scheduling, there is no indefinite delay.</li>
+            <li> There is no starvation in FCFS disk scheduling because each request gets a fair chance.</li>
+        </ol>
+
+        </p>
+
+    </div>
+
+    <div class="disadv">
+        <h3>Disadvantages of FCFS Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> FCFS scheduling is not offered as the best service. </li>
+            <li> In FCFS, scheduling disk time is not optimized. </li>
+        </ol>
+
+        </p>
+
+    </div>
+    <div class="eg">
+        <h3>Example of FCFS scheduling</h3>
+
+        <p>A real-life example of the FCFS method is buying a movie ticket on the ticket counter. In this scheduling
+            algorithm,
+            a person is served according to the queue manner. The person who arrives first in the queue first buys the
+            ticket
+            and then the next one. This will continue until the last person in the queue purchases the ticket. Using
+            this
+            algorithm, the CPU process works in a similar manner.
+
+            Turn Around Time = Completion Time - Arrival Time
+            Waiting Time = Turnaround time - Burst Time
+
+            The average waiting Time is determined by summing the respective waiting time of all the processes and
+            divided
+            the
+            sum by the total number of processes.
+
+        </p>
+
+    </div>
+
+
+
+    <img src="https://www.gatevidyalay.com/wp-content/uploads/2018/11/FCFS-Disk-Scheduling-Algorithm-Problem-01.png"
+        width="500">
+
+    <button class="btn"> <a href="https://bhargav-nadiadra.github.io/osproject.github.io/FCFS%20Simulator.html">Click for Simulation
+        </a> </button>
+
+</body>
+<script src="try.js"></script>
+
+</html>

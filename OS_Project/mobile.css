@@ -1,0 +1,74 @@
+@media screen and (max-width: 1080px) {
+  .nav{
+    padding: 1rem 1.5rem;
+}
+
+.nav h2 {
+    color: white;
+    font-size: 1rem;
+}
+
+#item {
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#item li {
+    list-style: none;
+    padding-right: 40px;
+}
+
+#item li a {
+    font-size: 0.9rem;
+    color: white;
+}
+
+#item li a:hover {
+    color: orange;
+    cursor: pointer;
+}  
+}
+
+@media screen and (max-width: 994px) {
+    .nav{
+    padding: 1rem 1.5rem;
+}
+
+.nav h2 {
+    color: white;
+    font-size: 1rem;
+}
+
+#item {
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#item li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+#item li a {
+    font-size: 0.9rem;
+    color: white;
+}
+
+#item li a:hover {
+    color: orange;
+    cursor: pointer;
+}  
+    
+}
+
+@media screen and (max-width: 830px) {
+    
+}
+
+@media screen and (max-width: 496px) {
+    
+}

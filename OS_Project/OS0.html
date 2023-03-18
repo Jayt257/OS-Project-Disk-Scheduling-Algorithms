@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="Os.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background-color: rgb(161, 220, 235);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgb(161, 220, 235);
+            border-radius: 0px;
+        }
+
+        .navbar ul {
+            font-size: 24px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 32px;
+            margin-bottom: 10px
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="navigation">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+
+            <div class="navbar" id="navBar">
+                <ul>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#">Home</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">Algorithms</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about">About Us</a></li>
+                </ul>
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#"> HOME
+                    </a></li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">ALGORITHMS</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about"> ABOUT US </a>
+                </li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </div>
+    </header>
+    <div id="content">
+        <div class="define">
+            <h1>Disk Scheduling Algorithm</h1>
+            <p>
+                Disk scheduling algorithm are the algorithm that are used for scheduling a disk. With the help of
+                operating
+                system, disk scheduling is performed. we use disk scheduling to schedule the input/output requests
+                that
+                arrive
+                for the disk.
+                Disk scheduling is also called input/output scheduling.
+            </p>
+        </div>
+
+        <div class="reasons">
+            <p>
+            <h2>
+                Disk Scheduling is important because of the following reasons
+            </h2>
+            <ol>
+                <li>The slowest part of the computer system is the hard drive. So, to access the hard drive conveniently
+                    or
+                    effectively, we need disk scheduling. </li>
+                <li>Sometimes, there are various I/O requests which arrive from the different processes. But at a time,
+                    the
+                    disk
+                    controller can only serve one I/O request. So, in this way, the other requests have to wait in the
+                    waiting
+                    queue, and scheduling is needed for those processes that are waiting in the waiting queue.</li>
+            </ol>
+            </p>
+        </div>
+        <div class="objective">
+            <h2>Objective of Disk Scheduling Algorithm</h2>
+            <ol>
+                <li>Less traveling head time </li>
+                <li> High throughput</li>
+                <li>Fairness</li>
+            </ol>
+        </div>
+        <div class="purpose">
+            <h2>Purpose of Disk Scheduling</h2>
+            <h3>
+                The purpose of disk scheduling is to choose a disk request from the input/output request queue and then
+                scheduling the remaining request means which has to be processed.
+            </h3>
+        </div>
+        <div class="algorithms">
+            <h2>Disk Scheduling Algorithms</h2>
+            <h3>
+                There are different types of disk scheduling algorithms. Each algorithm contains its own benefits and
+                drawbacks.
+            </h3>
+        </div>
+    </div>
+    <button class="btn"> <a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms">Click to view Algorithms
+        </a> </button>
+</body>
+<script src="try.js"></script>
+</html>

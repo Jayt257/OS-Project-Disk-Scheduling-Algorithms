@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-SCAN Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="Os.css">
+    <style>
+        body {
+            background-color: rgb(192, 230, 240);
+            background-position: center;
+            color: black;
+        }
+
+        .navbar {
+            background-color: rgb(192, 230, 240);
+            border-radius: 0px;
+
+        }
+
+        .navbar ul {
+            font-size: 24px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 32px;
+            margin-bottom: 10px
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+
+        .define {
+            color: rgb(8, 111, 129);
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        h2 {
+            color: rgb(77, 7, 7);
+            text-align: center;
+        }
+
+        .adv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .disadv h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+        .eg h3 {
+            color: rgb(0, 47, 90);
+            font-size: 25px;
+        }
+
+
+        p {
+            font-size: 22px;
+        }
+
+        li {
+            font-size: 22px;
+        }
+
+        .btn {
+            transition: all .5s ease;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: black;
+            font-size: 30px;
+            padding: 13px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            color: #001f3f;
+            background-color: #fff;
+            border: none;
+        }
+
+        .btn:hover a {
+            color: black;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="navigation">
+            <div id="menu" onclick="onClickMenu()">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+
+            <div class="navbar" id="navBar">
+
+                <ul>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#">Home</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">Algorithms</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/C-SCAN%20Simulator.html">Simulation</a></li>
+                    <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about">About Us</a></li>
+                </ul>
+
+            </div>
+            <ul class="nav" id="nav">
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#"> HOME
+                </a></li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#algorithms" target="_blank">ALGORITHMS</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/LOOK%20Simulator.html">SIMULATION</a>
+                </li>
+                <li><a href="https://bhargav-nadiadra.github.io/osproject.github.io/#about"> ABOUT US </a>
+                </li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </div>
+
+
+    </header>
+    <div class="define">
+        <h2> C-SCAN Disk Scheduling Algorithm </h2>
+        <p>
+            C-SCAN stands for Circular-SCAN. C-SCAN is an enhanced version of SCAN disk scheduling.
+            In the C-SCAN disk scheduling algorithm, the disk head starts to move at one end of the disk and moves
+            towards
+            the other end and service the requests that come in its path and reach another end.
+            After doing this, the direction of the head is reversed.
+            The head reaches the first end without satisfying any request and then it goes back and services the
+            requests
+            which are remaining.
+        </p>
+
+    </div>
+
+    <div class="adv">
+        <h3>Advantages of C-SCAN Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> C-SCAN offers better uniform waiting time. </li>
+            <li> It offers a better response time. </li>
+        </ol>
+        </p>
+
+    </div>
+
+    <div class="disadv">
+        <h3>Disadvantages of C-SCAN Disk Scheduling Algorithm</h3>
+        <p>
+        <ol>
+            <li> In C-SCAN disk scheduling, there are more seek movements as compared to SCAN disk scheduling. </li>
+            <li> In C-SCAN disk scheduling, we have to move the disk head to the end of the disk even when we don’t have
+                any
+                request to service.</li>
+        </ol>
+        </p>
+
+    </div>
+
+    <div class="eg">
+        <h3>Example</h3>
+
+        <p>Consider the following disk request sequence for a disk with 100 tracks 98, 137, 122, 183, 14, 133, 65, 78
+            Head
+            pointer starting at 54 and moving in left direction. Find the number of head movements in cylinders using
+            C-SCAN scheduling.
+
+        <p>
+            No. of cylinders crossed = 40 + 14 + 199 + 16 + 46 + 4 + 11 + 24 + 20 + 13 = 387
+        </p>
+        </p>
+
+        <img src="data:image/png;base64,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"
+            width="500">
+    </div>
+
+    <button class="btn"> <a href="https://bhargav-nadiadra.github.io/osproject.github.io/C-SCAN%20Simulator.html">Click for Simulation
+        </a> </button>
+
+</body>
+<script src="try.js"></script>
+
+</html>

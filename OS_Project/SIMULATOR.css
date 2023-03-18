@@ -1,0 +1,106 @@
+body{
+     background-color: rgb(192, 230, 240);
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    color: rgb(0, 47, 90);
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.input-container{
+color: rgb(0, 47, 90);
+font-size: 1.3rem;
+display: block;
+margin: auto;
+width: 22%;
+}
+
+.input-container h6{
+    color: gray;
+font-size: 0.8rem;
+ margin-top: 0px;
+ margin-left: 155px;
+ margin-bottom: 5px;
+ }
+
+#array{
+   padding: 3px; 
+   margin: 5px;
+}
+
+.head{
+     color: rgb(0, 47, 90);
+    font-size: 1.3rem;
+    margin-left: 27px;
+}
+#inputhead{
+padding: 3px;
+margin-left: 19px;
+}
+
+.btn{
+size: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding-top: 5px;
+margin-left: 48px;
+}
+
+.btn button{
+font-size: 1rem;
+padding: 5px;
+}
+
+.btn button:hover{
+    cursor: pointer;
+}
+ 
+#vv{
+     color: rgb(0, 47, 90);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.graph{
+    margin-left: 400px;
+}
+
+.radio{
+     color: rgb(0, 47, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 1.3rem;
+    padding-left: 115px;
+    padding-bottom: 10px;
+}
+
+.radio .right {
+    padding-left: 10px;
+}
+
+input[name="option"] {
+    accent-color: black;
+}
+
+#left {
+     width: 15px;
+     height: 15px;
+}
+
+#right {
+    margin-right: -2px;
+     width: 15px;
+     height: 15px;
+}
+ 
